@@ -41,6 +41,7 @@ class EditArticle extends StatelessWidget {
                     hintText: 'url',
                     hintStyle: const TextStyle(color: Color.fromARGB(255, 8, 8, 8)),
                   ),
+                  
                 ),
                 const SizedBox(
                   height: 30,
