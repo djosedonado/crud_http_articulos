@@ -1,0 +1,10 @@
+
+POST https://newproyectdanilo.000webhostapp.com/pruebas/agregarArticles.php HTTP/1.1
+content-type: application/json
+
+{
+    "fotos": "https://cdn-icons-png.flaticon.com/512/1088/1088537.png",
+    "detalles": "mcfdsafdas",
+    "codigos": "g2132hs",
+    "id": "2"
+}
