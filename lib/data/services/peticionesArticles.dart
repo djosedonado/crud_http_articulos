@@ -7,6 +7,20 @@ import '../../domain/models/articles.dart';
 import '../../domain/models/utiles.dart';
 
 class PeticionesArticles {
+   
+   static Future<List<Articles>> getListArticlesId(String id) async {
+    var url = Uri.parse(
+        "https://newproyectdanilo.000webhostapp.com/pruebas/listarArticles2.php");
+
+    final response = await http
+        .post(url, body: {'id': id});
+
+    print(response.statusCode);
+    print(response.body);
+    return compute(convertirAlista, response.body);
+  }
+
+  //consulta
   static Future<List<Articles>> getListArticles() async {
     var url = Uri.parse(
         "https://newproyectdanilo.000webhostapp.com/pruebas/listarArticles.php");
@@ -37,10 +51,10 @@ class PeticionesArticles {
 
     print(response.statusCode);
     print(response.body);
-    return compute(convertirAddArticle, response.body);
+    return compute(convertirAlista2, response.body);
   }
 
-  static List<Mensajes> convertirAddArticle(String responsebody) {
+  static List<Mensajes> convertirAlista2(String responsebody) {
     final pasar = json.decode(responsebody).cast<Map<String, dynamic>>();
     print(pasar);
     print(pasar[0]['mensaje']);
@@ -58,14 +72,7 @@ class PeticionesArticles {
 
     print(response.statusCode);
     print(response.body);
-    return compute(convertirAddArticle, response.body);
-  }
-
-  static List<Mensajes> convertirEditArticle(String responsebody) {
-    final pasar = json.decode(responsebody).cast<Map<String, dynamic>>();
-    print(pasar);
-    print(pasar[0]['mensaje']);
-    return pasar.map<Mensajes>((json) => Mensajes.desdeJson(json)).toList();
+    return compute(convertirAlista2, response.body);
   }
 
   // Eliminar Articulos
@@ -78,14 +85,6 @@ class PeticionesArticles {
 
     print(response.statusCode);
     print(response.body);
-    return compute(convertirAddArticle, response.body);
+    return compute(convertirAlista2, response.body);
   }
-
-  static List<Mensajes> convertirDeleteArticle(String responsebody) {
-    final pasar = json.decode(responsebody).cast<Map<String, dynamic>>();
-    print(pasar);
-    print(pasar[0]['mensaje']);
-    return pasar.map<Mensajes>((json) => Mensajes.desdeJson(json)).toList();
-  }
-
 }

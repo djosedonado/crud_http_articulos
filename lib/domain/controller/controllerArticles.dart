@@ -12,6 +12,9 @@ class ControlArticles extends GetxController {
   Future<void> listArticles() async {
     listaArticle.value = await PeticionesArticles.getListArticles();
   }
+  Future<void> listArticlesId(String id) async {
+    listaArticle.value = await PeticionesArticles.getListArticlesId(id);
+  }
 
   Future<void> addArticle(String foto, String detalle, String codigo,String id) async {
     _listarMensajes.value = await PeticionesArticles.addArticle(foto, detalle, codigo,id);

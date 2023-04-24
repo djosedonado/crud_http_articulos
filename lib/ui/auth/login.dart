@@ -93,7 +93,7 @@ class Login extends StatelessWidget {
                                   backgroundColor: Colors.yellow);
                             } else {
                               controla
-                                  .listArticles()
+                                  .listArticlesId(controlu.listaUserLogin![0].id.toString())
                                   .then((value) => Get.toNamed("/listarticles"));
                             }
                           });

@@ -4,7 +4,7 @@ class Articles {
   late String detalle;
   late String codigo;
   late int idUser;
-  late int idfinal;
+  late int idice;
 
   Articles(
       {required this.id,
