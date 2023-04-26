@@ -115,7 +115,7 @@ class AddArticle extends StatelessWidget {
                             duration: const Duration(seconds: 3),
                             icon: const Icon(Icons.info),
                             shouldIconPulse: true,
-                            backgroundColor: Colors.yellow);
+                            backgroundColor: Color.fromARGB(255, 10, 167, 202));
                       });
                       Get.back();
                     },

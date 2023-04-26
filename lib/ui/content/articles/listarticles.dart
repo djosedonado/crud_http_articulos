@@ -43,6 +43,7 @@ class ListArticles extends StatelessWidget {
                       },
                       icon: Icon(Icons.edit))
                   : const Text(""),
+                  
               onTap: () {
                 controla
                     .deleteArticle(
@@ -52,7 +53,7 @@ class ListArticles extends StatelessWidget {
                       duration: const Duration(seconds: 3),
                       icon: const Icon(Icons.info),
                       shouldIconPulse: true,
-                      backgroundColor: Color.fromARGB(255, 5, 47, 161));
+                      backgroundColor: Color.fromARGB(255, 11, 94, 154));
                       controla.listArticlesId(controlu.listaUserLogin![0].id.toString());
                       controla.listaArticle.refresh();
                 });
@@ -66,6 +67,7 @@ class ListArticles extends StatelessWidget {
           Get.toNamed("/addArticle");
         },
         child: Icon(Icons.add),
+        backgroundColor: Color.fromARGB(255, 10, 167, 202),
       ),
     );
   }

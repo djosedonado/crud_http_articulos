@@ -15,7 +15,7 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Crud Usando HTTP',
-      theme: ThemeData(primarySwatch: Colors.amber),
+      theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: '/login',
       routes: {
         "/login": (context) => const Login(),
